@@ -24,10 +24,13 @@ namespace LineCompare
             double diffX2 = x4 - x3;
             double diffY2 = y4 - y3;
             double length2 = Math.Sqrt(Math.Pow(diffX2, 2) + Math.Pow(diffY2, 2));
-            if (length1.Equals(length2))
-                Console.WriteLine("Lengths of both lines ARE EQUAL");
+            double diff = Math.Abs(length2 - length1);
+            if (length1.CompareTo(length2) > 0)
+                Console.WriteLine("Length of line 1 is greater than line 2 by '" + diff+ "' unit ");
+            else if (length1.CompareTo(length2) < 0)
+                Console.WriteLine("Length of line 2 is greater than line 1 by '" + diff+ "' unit ");
             else
-                Console.WriteLine("Lengths of both lines ARE NOT EQUAL");
+                Console.WriteLine("Lengths of both lines ARE EQUAL ");
         }
     }
 }
